@@ -30,6 +30,9 @@ npm run build
 - React + TypeScript + Vite
 - tldraw SDK 5
 - Vitest
-- GitHub Pages
 
-> tldraw's SDK is source-available under its own license. Review [tldraw's licensing](https://tldraw.dev/community/license) before using this code in a production product.
+## Deployment and tldraw licensing
+
+tldraw permits SDK use in development by default, but a production deployment requires a valid trial, hobby, or commercial license key. This repository intentionally does not include a key. Request a hobby license for a non-commercial public deployment, then pass its public key to the `<Tldraw licenseKey="..." />` component before deploying.
+
+> The application code in this repository is MIT-licensed. The tldraw dependency remains covered by [tldraw's own license](https://tldraw.dev/community/license).
