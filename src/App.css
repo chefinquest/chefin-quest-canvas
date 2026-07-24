@@ -1,0 +1,185 @@
+.app-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #09080d;
+}
+
+.canvas-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.canvas-frame::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  box-shadow: inset 0 0 120px 30px rgba(14, 8, 26, .5);
+}
+
+.hud {
+  position: absolute;
+  z-index: 1000;
+  color: #f3efff;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(15, 12, 21, .82);
+  box-shadow: 0 18px 55px rgba(0,0,0,.32);
+}
+
+.hud--top {
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 18px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #09080d;
+  background: #d7ff4f;
+  border-radius: 14px;
+  font: 700 16px/1 'DM Mono', monospace;
+  box-shadow: 0 0 28px rgba(215,255,79,.22);
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: #a79fb5;
+  font: 500 10px/1.3 'DM Mono', monospace;
+  letter-spacing: .16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a79fb5;
+  font: 500 10px/1 'DM Mono', monospace;
+  letter-spacing: .12em;
+}
+
+.status span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff7557;
+}
+
+.status--ready span {
+  background: #d7ff4f;
+  box-shadow: 0 0 12px #d7ff4f;
+}
+
+.hud--side {
+  top: 116px;
+  right: 18px;
+  width: min(280px, calc(100vw - 36px));
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.manifesto {
+  margin: 12px 0 18px;
+  color: #c9c2d4;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.manifesto strong { color: #fff; font-weight: 600; }
+.divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 16px; }
+
+.quest-button,
+.ghost-button {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease, opacity .16s ease;
+}
+
+.quest-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  color: #15121a;
+  background: #d7ff4f;
+  border-radius: 12px;
+  font: 600 12px/1 'DM Mono', monospace;
+  letter-spacing: .06em;
+  box-shadow: 0 8px 28px rgba(215,255,79,.13);
+}
+
+.quest-button span { font-size: 18px; }
+.quest-button:hover { transform: translateY(-2px); background: #e2ff7e; }
+
+.ghost-button {
+  margin-top: 8px;
+  min-height: 37px;
+  color: #bbb3c7;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  font: 500 10px/1 'DM Mono', monospace;
+  letter-spacing: .07em;
+}
+
+.ghost-button:hover { color: #fff; background: rgba(255,255,255,.1); }
+.ghost-button--danger:hover { color: #ff9a84; }
+button:disabled { cursor: default; opacity: .45; transform: none; }
+.quest-counter { margin: 16px 0 0; color: #756d83; font: 500 9px/1 'DM Mono', monospace; letter-spacing: .12em; }
+
+.hud--hint {
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: #90889d;
+  font: 500 9px/1 'DM Mono', monospace;
+  letter-spacing: .1em;
+}
+
+.hud--hint span { color: #d7ff4f; padding: 0 6px; }
+
+.tl-container { --color-background: #0d0b12; }
+.tl-background { background-color: #0d0b12 !important; }
+.tlui-menu-zone { top: 105px !important; }
+.tlui-style-panel__wrapper { top: 116px !important; right: 312px !important; }
+.tlui-help-menu { display: none; }
+
+@media (max-width: 720px) {
+  .hud--top { top: 10px; left: 10px; right: 10px; min-height: 64px; padding: 9px 12px; }
+  .brand-mark { width: 42px; height: 42px; }
+  h1 { font-size: 19px; }
+  .status { display: none; }
+  .hud--side { top: 84px; right: 10px; width: 220px; padding: 14px; }
+  .manifesto { display: none; }
+  .divider { margin: 7px 0 10px; }
+  .hud--hint { display: none; }
+  .tlui-menu-zone { top: 82px !important; }
+  .tlui-style-panel__wrapper { display: none !important; }
+}
